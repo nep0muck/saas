@@ -14,7 +14,7 @@ class ContactsController < ApplicationController
             body = params[:contact][:comments]
             
             # Sending Mails via File ContactMailer -> Action contact_email
-            ContactMailer.contact_email(name, email, body).deliver
+            ContactMailer.contact_email(name, email, body).deliver_now
             
             flash[:success] = 'Message sent successfully.'
             redirect_to new_contact_path
