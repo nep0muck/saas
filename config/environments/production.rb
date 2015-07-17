@@ -76,4 +76,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  # External SMTP Server for email sending
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "mail.eichlersolutions.de",
+    :port                 => 25,
+    :domain               => 'eichlersolutions.de',
+    :user_name            => 'me@eichlersolutions.de',
+    :password             => '!5290Qwer',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true
+  }
+  
 end
